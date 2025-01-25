@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>University Virtual Assistant</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f9;
+        }
+        .chat-container {
+            width: 90%;
+            max-width: 600px;
+            padding: 20px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+            background-color: white;
+            text-align: center;
+        }
+        .chat-title {
+            font-size: 24px;
+            margin-bottom: 10px;
+            font-weight: bold;
+            color: #333;
+        }
+        .chat-description {
+            font-size: 16px;
+            margin-bottom: 20px;
+            color: #555;
+            line-height: 1.5;
+        }
+        .placeholder-image {
+            width: 100%;
+            max-width: 300px;
+            margin: 0 auto 20px;
+            display: block;
+            border-radius: 8px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 14px;
+            color: #666;
+        }
+        a {
+            color: #0073e6;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="chat-container">
+        <div class="chat-title">University Virtual Assistant</div>
+        <p class="chat-description">
+            This is a project.
+        </p>
+        <p class="chat-description">
+            Currently supported only for Case Western Reserve University, limited to answering questions about General, Graduate Studies, & Biochemistry Department due to knowledge base limitations.
+        </p>
+        <p class="chat-description">
+            Click on the bottom right button on your screen to start chatting!
+        </p>
+        
+        <img src="img.png" alt="University Placeholder Image" class="placeholder-image">
+        <div id="voiceflow-chat"></div>
+        <div class="footer">
+            Access the campus website <a href="https://www.case.edu" target="_blank">here</a>.
+        </div>
+    </div>
+    
+    <!-- Voiceflow Chat Integration -->
+    <script type="text/javascript">
+        (function(d, t) {
+            var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
+            v.onload = function() {
+                window.voiceflow.chat.load({
+                    verify: { projectID: '678eb1c3945f91a0e1a16796' },
+                    url: 'https://general-runtime.voiceflow.com',
+                    versionID: 'production'
+                });
+            }
+            v.src = "https://cdn.voiceflow.com/widget-next/bundle.mjs"; 
+            v.type = "text/javascript"; 
+            s.parentNode.insertBefore(v, s);
+        })(document, 'script');
+    </script>
+</body>
+</html>
